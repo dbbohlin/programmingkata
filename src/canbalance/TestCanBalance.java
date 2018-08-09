@@ -1,7 +1,6 @@
 package canbalance;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,6 +48,11 @@ class TestCanBalance {
 	@Test
 	void test_CanBalanceComplexOddArrayBalancedReturnsTrue() {
 		assertEquals(true, runCanBalance(new int[] {2,1,1,2,2}));
+	}
+	
+	@Test
+	void test_CanBalanceComplexOddArrayUnbalancedReturnsFalse() {
+		assertEquals(false, runCanBalance(new int[] {2,1,1,2,1}));
 	}
 	
 	private boolean runCanBalance(int[] nums) {
