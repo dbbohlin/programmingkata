@@ -17,28 +17,31 @@ class TestCanBalance {
 
 	@Test
 	void test_CanBalanceEmptyOrNullArrayReturnsFalse() {
-		int[] nums = null;
-		assertEquals(false, tester.canBalance(nums));
-		nums = new int[0];
-		assertEquals(false, tester.canBalance(nums));
+		assertEquals(false, runCanBalance(null));
+		assertEquals(false, runCanBalance(new int[0]));
 	}
 	
 	@Test
 	void test_CanBalanceSingleElementArrayReturnsFalse() {
-		int[] nums = {1};
-		assertEquals(false, tester.canBalance(nums));
+		assertEquals(false, runCanBalance(new int[] {1}));
 	}
 	
 	@Test
 	void test_CanBalanceSimpleBalancedArrayReturnsTrue() {
-		int[] nums = {1,1};
-		assertEquals(true, tester.canBalance(nums));
+		assertEquals(true, runCanBalance(new int[] {1,1}));
 	}
 	
 	@Test
 	void test_CanBalanceSimpleUnbalanceArrayReturnsFalse() {
-		int[] nums = {1,2};
-		assertEquals(false, tester.canBalance(nums));
+		assertEquals(false, runCanBalance(new int[] {1,2}));
 	}
 
+	@Test
+	void test_CanBalanceMoreComplexBalanceArrayReturnsTrue() {
+		assertEquals(true, runCanBalance(new int[] {2,1,1,2}));
+	}
+	
+	private boolean runCanBalance(int[] nums) {
+		return tester.canBalance(nums);
+	}
 }

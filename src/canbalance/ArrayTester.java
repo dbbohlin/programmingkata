@@ -22,12 +22,19 @@ public class ArrayTester {
 		if (null == nums || nums.length < 2) {
 			return false;
 		}
-		int[] firstnums = Arrays.copyOfRange(nums, 0, nums.length/2);
-		int[] secondnums = Arrays.copyOfRange(nums, (nums.length/2), nums.length);
-		if(firstnums[0] != secondnums[0]) {
-			return false;
-		}
-		return true;
+		int len = nums.length;
+		return isArraysEqual(Arrays.copyOfRange(nums, 0, len/2), Arrays.copyOfRange(nums, (len/2), len));
 	}
 
+	private boolean isArraysEqual(int[] firstnums, int[] secondnums) {
+		return (arrayValue(firstnums) == arrayValue(secondnums));
+	}
+	
+	private int arrayValue(int[] nums) {
+		int value = 0;
+		for(int i = 0; i < nums.length; ++i) {
+			value += nums[i];
+		}
+		return value;
+	}
 }
