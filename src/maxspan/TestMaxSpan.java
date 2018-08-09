@@ -55,7 +55,7 @@ class TestMaxSpan {
 	
 	@Test
 	void test_maxspanMoreComplexSpanWithNegativeNumbersShouldReturn6() {
-		int[] nums = {1, 4, 2, 1, 4, 1, 4, 3, -3, 5, 9, -6};
+		int[] nums = {1, 4, 2, 1, 4, 1, 4, 3, -3, 5, 9, -4};
 		assertEquals(6, maxSpanResult(nums));
 	}
 }
