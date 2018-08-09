@@ -19,11 +19,27 @@ import java.util.Arrays;
 public class ArrayTester {
 
 	public boolean canBalance(int[] nums) {
-		if (null == nums || nums.length < 2) {
+		if (isArrayNullOrEmpty(nums)) {
 			return false;
-		}
+		}		
+		return checkArray(nums);
+	}
+
+	private boolean checkArray(int[] nums) {
 		int len = nums.length;
-		return isArraysEqual(Arrays.copyOfRange(nums, 0, len/2), Arrays.copyOfRange(nums, (len/2), len));
+		for(int i = 0; i < nums.length; ++i) {
+			int offset = nums.length - i;
+			int[] firstSet = Arrays.copyOfRange(nums, 0, offset);
+			int[] secondSet = Arrays.copyOfRange(nums, offset, nums.length);
+			if(isArraysEqual(firstSet, secondSet)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean isArrayNullOrEmpty(int[] nums) {
+		return null == nums || nums.length < 2;
 	}
 
 	private boolean isArraysEqual(int[] firstnums, int[] secondnums) {

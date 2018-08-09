@@ -41,6 +41,16 @@ class TestCanBalance {
 		assertEquals(true, runCanBalance(new int[] {2,1,1,2}));
 	}
 	
+	@Test
+	void test_CanBalanceMoreComplexUnbalanceArrayReturnsFalse() {
+		assertEquals(false, runCanBalance(new int[] {2,1,2,2}));
+	}
+	
+	@Test
+	void test_CanBalanceComplexOddArrayBalancedReturnsTrue() {
+		assertEquals(true, runCanBalance(new int[] {2,1,1,2,2}));
+	}
+	
 	private boolean runCanBalance(int[] nums) {
 		return tester.canBalance(nums);
 	}
