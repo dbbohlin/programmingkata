@@ -34,5 +34,11 @@ class TestCanBalance {
 		int[] nums = {1,1};
 		assertEquals(true, tester.canBalance(nums));
 	}
+	
+	@Test
+	void test_CanBalanceSimpleUnbalanceArrayReturnsFalse() {
+		int[] nums = {1,2};
+		assertEquals(false, tester.canBalance(nums));
+	}
 
 }

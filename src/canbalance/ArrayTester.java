@@ -3,6 +3,8 @@
  */
 package canbalance;
 
+import java.util.Arrays;
+
 /**
  * Given a non-empty array, return true if there is a place to split the array so that the sum
  * of the numbers on one side is equal to the sum of the numbers on the other side.
@@ -17,11 +19,15 @@ package canbalance;
 public class ArrayTester {
 
 	public boolean canBalance(int[] nums) {
-		boolean balanced = true;
 		if (null == nums || nums.length < 2) {
 			return false;
 		}
-		return balanced;
+		int[] firstnums = Arrays.copyOfRange(nums, 0, nums.length/2);
+		int[] secondnums = Arrays.copyOfRange(nums, (nums.length/2), nums.length);
+		if(firstnums[0] != secondnums[0]) {
+			return false;
+		}
+		return true;
 	}
 
 }
