@@ -38,11 +38,23 @@ package staircase;
  */
 public class StairCase {
 
-	public String build(int i) {
-		if(0 == i) {
+	public String build(int n) {
+		if(n < 1) {
 			return "";
 		}
-		return "#";
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < n ; ++i){
+            for(int j = 0; j < n; ++j){
+                if(j > ((n - i) - 2)){
+                    builder.append("#");
+                }else{
+                    builder.append(" ");
+                }
+            }
+            builder.append(System.lineSeparator());
+        }
+
+		return builder.toString();
 	}
 
 }

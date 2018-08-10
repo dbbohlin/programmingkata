@@ -21,7 +21,12 @@ class TestStairCase {
 	
 	@Test
 	void test_StairCaseOneReturnsPoundSign() {
-		assertEquals("#", staircase.build(1));
+		assertEquals("#\n", staircase.build(1));
+	}
+	
+	@Test
+	void test_StairCaseTwoReturnsSmallStairSizeTwo() {
+		assertEquals(" #\n##\n", staircase.build(2));
 	}
 
 }
