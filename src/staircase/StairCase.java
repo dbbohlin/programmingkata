@@ -39,8 +39,10 @@ package staircase;
 public class StairCase {
 
 	public String build(int i) {
-		// TODO Auto-generated method stub
-		return "";
+		if(0 == i) {
+			return "";
+		}
+		return "#";
 	}
 
 }

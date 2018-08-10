@@ -18,5 +18,10 @@ class TestStairCase {
 	void test_StairCaseZeroReturnsEmptyString() {
 		assertEquals("", staircase.build(0));
 	}
+	
+	@Test
+	void test_StairCaseOneReturnsPoundSign() {
+		assertEquals("#", staircase.build(1));
+	}
 
 }
