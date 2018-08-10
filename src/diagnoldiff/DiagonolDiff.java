@@ -46,6 +46,29 @@ package diagnoldiff;
  *
  */
 
-public class DiagnolDiff {
+public class DiagonolDiff {
+    public int diagonalDifference(int[][] arr) {
+        int primary = getDiagonalValue(true, arr);
+        int secondary = getDiagonalValue(false, arr);
+        System.out.println("Primary = " + primary + ", Secondary = "+secondary);
+        return Math.abs(primary - secondary);
+    }
+    
+    private int getDiagonalValue(boolean isPrime, int[][] arr){
+        int value = 0;
+        if(isPrime){
+            int j = 0;
+            for(int i = 0; i < arr.length; ++i, ++j){
+                value += arr[i][j];
+            }
+        }else{
+            int j = 0;
+            for(int i = (arr.length - 1); i >= 0; --i, ++j){
+                value += arr[i][j];
+            }
+        }
+        return value;
+    }
+
 
 }
