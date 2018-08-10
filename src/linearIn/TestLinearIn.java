@@ -24,4 +24,9 @@ class TestLinearIn {
 	void test_LinearInSimpleArraysThatEqualReturnTrue() {
 		assertEquals(true, linear.isSubset(new int[] {1}, new int[] {1}));
 	}
+	
+	@Test
+	void test_LinearInSimpleArraysThatDontEqualReturnFalse() {
+		assertEquals(false, linear.isSubset(new int[] {1}, new int[] {2}));
+	}
 }

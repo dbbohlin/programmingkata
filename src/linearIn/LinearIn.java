@@ -22,7 +22,12 @@ public class LinearIn {
 		if(isNullOrEmpty(outer, inner)) {
 			return false;
 		}
-		return true;
+		for(int i = 0; i < outer.length; ++i) {
+			if(outer[i] == inner[i]) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private boolean isNullOrEmpty(int[] outer, int[] inner) {
