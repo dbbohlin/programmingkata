@@ -19,8 +19,14 @@ package linearIn;
 public class LinearIn {
 
 	public boolean isSubset(int[] outer, int[] inner) {
-		// TODO Auto-generated method stub
-		return false;
+		if(isNullOrEmpty(outer, inner)) {
+			return false;
+		}
+		return true;
+	}
+
+	private boolean isNullOrEmpty(int[] outer, int[] inner) {
+		return null == outer || null == inner || 0 == outer.length || 0 == inner.length;
 	}
 
 }

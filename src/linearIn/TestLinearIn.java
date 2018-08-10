@@ -17,6 +17,11 @@ class TestLinearIn {
 	@Test
 	void test_LinearInNullOrEmptyArrayReturnFalse() {
 		assertEquals(false, linear.isSubset(null, null));
+		assertEquals(false, linear.isSubset(new int[0], new int[0]));
 	}
 
+	@Test
+	void test_LinearInSimpleArraysThatEqualReturnTrue() {
+		assertEquals(true, linear.isSubset(new int[] {1}, new int[] {1}));
+	}
 }
