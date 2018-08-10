@@ -22,9 +22,24 @@ public class LinearIn {
 		if(isNullOrEmpty(outer, inner)) {
 			return false;
 		}
+		return innerContainsOuter(outer, inner);
+	}
+
+	private boolean innerContainsOuter(int[] outer, int[] inner) {
 		for(int i = 0; i < outer.length; ++i) {
-			if(outer[i] == inner[i]) {
-				return true;
+			if(outer[i] > inner[0]) {
+				return false;
+			} else {
+				boolean isMatch = true;
+				for(int j = 0; j < inner.length && j < outer.length; ++j) {
+					if(outer[i + j] != inner[j]) {
+						isMatch=false;
+						break;
+					}
+				}
+				if(isMatch) {
+					return true;
+				}
 			}
 		}
 		return false;

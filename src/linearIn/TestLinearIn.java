@@ -29,4 +29,20 @@ class TestLinearIn {
 	void test_LinearInSimpleArraysThatDontEqualReturnFalse() {
 		assertEquals(false, linear.isSubset(new int[] {1}, new int[] {2}));
 	}
+	
+	@Test
+	void test_LinearInMoreComplexArraysThatDontEqualReturnFalse() {
+		assertEquals(false, linear.isSubset(new int[] {1, 2}, new int[] {1, 3}));
+	}
+	
+	@Test
+	void test_LinearInComplexArraysThatAreContainedReturnTrue() {
+		assertEquals(true, linear.isSubset(new int[] {1,2,4,6}, new int[] {2,4}));
+	}
+	
+	@Test
+	void test_LinearInComplexArraysThatAreNotContainedReturnFalse() {
+		assertEquals(false, linear.isSubset(new int[] {1,2,4,6}, new int[] {2,3,4}));
+	}
+
 }
