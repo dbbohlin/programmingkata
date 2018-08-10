@@ -42,13 +42,28 @@ package plusminus;
 public class PlusMinus {
 
 	public String plusMinusZero(int[] arr) {
-		StringBuilder builder = new StringBuilder();
-		if(isNullOrEmpty(arr)) {
-			return "0.000000\n0.000000\n0.000000";
+		double plus = 0.0;
+		double minus = 0.0;
+		double zero = 0.0;
+		float len = arr.length;
+		if(!isNullOrEmpty(arr)) {
+			for(int i = 0; i < arr.length; ++i) {
+				if(arr[i] > 0) {
+					plus += 1f;
+				}else if(arr[i] < 0) {
+					minus += 1f;
+				}else {
+					zero += 1f;
+				}
+			}
+			plus = plus/len;
+			minus = minus/len;
+			zero = zero/len;
 		}
-		return builder.toString();
+		
+		return String.format("%.6f\n%.6f\n%.6f", plus,minus,zero);
 	}
-
+	
 	private boolean isNullOrEmpty(int[] arr) {
 		return null == arr || 0 == arr.length;
 	}
